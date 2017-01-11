@@ -26,7 +26,7 @@ In your project's Gruntfile, add a section named `getsave_async` to the data obj
 grunt.initConfig({
   getsave_async: {
     options: {
-      // Task-specific options go here.
+      "https":true
     },
     your_target: [
       {
@@ -45,29 +45,33 @@ grunt.initConfig({
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+
+All files can either be set to fetch through HTTPS ot HTTP using the "https" option.
 
 ```js
 grunt.initConfig({
     getsave_async: {
       "target":[
         {
-          "get":"http://placeholdit.imgix.net/~text?txtsize=33&txt=this1&w=352&h=150",
+          "get":"https://placeholdit.imgix.net/~text?txtsize=33&txt=this1&w=352&h=150",
           "loc":"output/img1.png"
         },
         {
-          "get":"http://placeholdit.imgix.net/~text?txtsize=33&txt=this2&w=352&h=150",
+          "get":"https://placeholdit.imgix.net/~text?txtsize=33&txt=this2&w=352&h=150",
           "loc":"output/img2.png"
         },
         {
-          "get":"http://placeholdit.imgix.net/~text?txtsize=33&txt=this3&w=352&h=150",
+          "get":"https://placeholdit.imgix.net/~text?txtsize=33&txt=this3&w=352&h=150",
           "loc":"output/img3.png"
         },
         {
-          "get":"http://placeholdit.imgix.net/~text?txtsize=33&txt=this4&w=352&h=150",
+          "get":"https://placeholdit.imgix.net/~text?txtsize=33&txt=this4&w=352&h=150",
           "loc":"output/img4.png"
         }
-      ]
+      ],
+      "options": {
+        "https": true
+      }
     }
 });
 ```
